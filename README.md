@@ -13,7 +13,7 @@ Une base de connaissances pour suivre quelques bonne règles de codage en C est 
 * Toutes les lignes intermédiaires s'alignent entre elles, et commencent par ` *`
 
 ## HEADER
-### Fichiers "C"
+### Exemple d'header de fichier .h
 ~~~ c
 /******************************************************************************
  *
@@ -29,59 +29,71 @@ Une base de connaissances pour suivre quelques bonne règles de codage en C est 
  *******************************************************************************
  */
 ~~~
-### Fichier "Makefile"
+### Template pour c.vim
+~~~ c
+/******************************************************************************
+ *
+ * File Name        : |FILENAME|
+ * Created By       : Firstname NAME
+ * Creation Date    : |DATE|
+ * Last Changed By  : Firstname NAME
+ * Last Change      : |DATE| |TIME|
+ * Description      : <CURSOR>
+ * Version          : 1.0
+ * Revision         : none
+ *
+ *******************************************************************************
+ */
+~~~
+### Exemle d'header de fichier Makefile
 ~~~ gherkin
 ################################################################################
 # File Name       : Makefile                                                   #
-# Created By      : Firstname Name                                             #
-# Creation Date   : Month(String) {Day(int)}th  , Year(int)                    #
+# Created By      : Firstname NAME                                             #
+# Creation Date   : 06/01/2016                                                 #
 # Last Changed By : Firstname Name                                             #
-# Last Changed    : Month(String) {Day(int)}th  , Year(int) at {HOUR:MINUTES}  #
-# Purpose         : Provides compilation automation to the project             #
-#                  - all   : Compile all source presents in the directory      #
-#                  - clean : Clean all objects and executable presents in the  #
-#                                                             directory        #
-#                  -<Custom Target > : Purpose                                 #
+# Last Changed    : 06/01/2016 19:07:46                                        #
+# Description     : Provides compilation automation to the project             #
 ################################################################################
 ~~~
 
 ## Règles "Makefile"
 ~~~ gherkin
 #### DEFAULT PARAMETERS ####
-EXECUTABLE=<Output Executable Name> 
+EXECUTABLE=<Output Executable Name>
 SOURCES=<Source1 Source2 .... SourceX>
-CFLAGS=<OPT1 OPT2 ... OPTX> 
-LDFLAGS=<OPT1 OPT2 ... OPTX> 
-    CC=<Compiler> 
-OBJECTS=$(SOURCES:.c=.o)  
+CFLAGS= -Wall -ansi -pedantic
+LDFLAGS=<OPT1 OPT2 ... OPTX>
+CC=gcc
+OBJECTS=$(SOURCES:.c=.o)
 
 #### CUSTOM PARAMETERS ####
-    <NAME>(CAPS LOCK)=your parameters
+<NAME>(CAPS LOCK)=your parameters
 
 #### DEFAULT TARGETS ####
-    all: $(EXECUTABLE)
+all: $(EXECUTABLE)
     $(EXECUTABLE): $(OBJECTS)
-                     $(CC) $(LDFLAGS) $(OBJECTS) -o $(EXECUTABLE)
+    $(CC) $(LDFLAGS) $(OBJECTS) -o $(EXECUTABLE)
 
-                     clean:
-rm $(OBJECTS) $(EXECUTABLE)
+clean:
+    rm $(OBJECTS) $(EXECUTABLE)
 
 #### CUSTOM TARGET ####
-    <Action Name>:
+<Action Name>:
     Action 1
     Action 2
     Action X
+
 ~~~
 ## Règles C
 ### Commentaires
 * Les commentaires doivent être en anglais
-* Il est interdit d'écrire un commentaire dans une fonction
 * Le commentaire doit être écrit avant la fonction concernée
 
 ~~~ c
 /*
- ** Normal comment
- ** with many lines
+ * Normal comment
+ * with many lines
  */
 
 /* Normal comment with one line  */
@@ -90,7 +102,7 @@ rm $(OBJECTS) $(EXECUTABLE)
 ### Variables
 * Les variables doivent être écrites en langue anglaise et ne doivent pas excéder 20 caractères.
 * Les abrévations peuvent être utilisées.
-* Chaque nom de variable doit commencer par une minuscule, et ne contient pas de majuscules
+* Chaque nom de variable doit commencer par une minuscule
 * Lors de leur création, les variables doivent être initialisées et instanciées.
 
 ~~~ c
@@ -98,6 +110,7 @@ rm $(OBJECTS) $(EXECUTABLE)
 int age = 20;
 /* If a variable is more than one word long, you must to separate each with '_' */
 int my_age = 20;
+int yourAge = 21;
 ~~~
 
 * Si la variable est une constante (déclarée avec #DEFINE), elle doit être écrite en majuscules
@@ -124,7 +137,7 @@ int main(int argc, char *argv)
 ~~~
 
 #### exception
-les variables utilisées dans les ```for``` peuvent être déclarées et initialisées dans la boucle en elle même
+les variables utilisées dans les ```for``` ne doivent pas être déclarées et initialisées dans la boucle en elle même
 
 ~~~ c
 /* variable is declared in for instruction */
