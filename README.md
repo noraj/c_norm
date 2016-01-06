@@ -136,8 +136,8 @@ int main(int argc, char *argv)
 }
 ~~~
 
-#### exception
-les variables utilisées dans les ```for``` ne doivent pas être déclarées et initialisées dans la boucle en elle même
+#### Exceptions
+Les variables utilisées dans les ```for``` ne doivent pas être déclarées et initialisées dans la boucle en elle même
 
 ~~~ c
 /* variable is declared in for instruction */
@@ -176,4 +176,41 @@ int test_function (int i)
     write(1, i, sizeof(int));
 }
 ~~~
+## Coder en C avec vim
+Le but va être de transformer Vim en IDE pour C/C++.
+
+Il sera alors possible d'automatiser l'ajout des header par exemple.
+Et bien d'autres choses ... qui vont vous faire gagner du temps.
+
+Le plugin se nome `C.Vim` voici comment l'installer :
+
+**Télécharger C.Vim**
+```
+$ cd /usr/src
+$ wget http://www.vim.org/scripts/download_script.php?src_id=21803
+```
+
+**Installer le plugin**
+L'étape `cd` vise à se placer dans votre répertoire personnel.
+```
+$ cd
+$ mkdir .vim
+$ cd .vim
+$ unzip /usr/src/cvim.zip
+```
+
+**Activer le plugin**
+```
+$ vim .vimrc
+```
+Ajouter la ligne suivant :
+```
+filetype plugin on
+```
+
+Pour en savoir plus sur C.vim voici un [tuto](http://www.thegeekstuff.com/2009/01/tutorial-make-vim-as-your-cc-ide-using-cvim-plugin/).
+
+C.vim : [vim.org](http://www.vim.org/scripts/script.php?script_id=213)
+
+Pour modifier le template des headers ajoutés automatiquement aux `.c` et `.h`, modifier le fichier `~/.vim/c-support/templates/c.comments.template`.
 
