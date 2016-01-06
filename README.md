@@ -1,31 +1,33 @@
 # Norme C
 
 ## Règles de codage
-Une base de connaissances pour suivre quelques bonne règles de codage en C est disponible [ici](https://www.securecoding.cert.org/confluence/display/c/CERT+C+Coding+Standard).
+Une base de connaissances pour suivre quelques bonne règles de codage en C est disponible [securecoding.cert.org](https://www.securecoding.cert.org/confluence/display/c/CERT+C+Coding+Standard).
 
 ## Règles classiques
 * Une ligne, y compris pour les commentaires, ne doit pas excéder 80 colonnes.
 * Une seule instruction par ligne.
 * Une fonction ne doit pas excéder 25 lignes entre les accolades.
-* Un fichier ne doit pas contenir plus de 5 fonctions
-* Chaque fichier source (```.c```, ```.h```, ```Makefile```) doit commencer pas un header.
-* Il ne doit pas y avoir de commentaires dans le corps des fonctions.
+* Un fichier ne doit pas contenir plus de 1 fonctions
+* Chaque fichier source (`.c`, `.h`, `Makefile`) doit commencer pas un header.
 * Les commentaires sont commencés et terminés par une ligne seule.
-* Toutes les lignes intermédiaires s'alignent entre elles, et commencent par ```**```
+* Toutes les lignes intermédiaires s'alignent entre elles, et commencent par ` *`
 
 ## HEADER
 ### Fichiers "C"
 ~~~ c
 /******************************************************************************
  *
- * File Name        : file.extension
- * Created By       : FirstName Name
- * Creation Date    : Month(String) {Day(int)}th  , Year(int)
- * Last Changed By  : FirstName Name
- * Last Change      : Month(String) {Day(int)}th  , Year(int) at {HOUR:MINUTES}
- * Purpose          : description
+ * File Name        : test.h
+ * Created By       : Alexandre ZANNI
+ * Creation Date    : 06/01/2016
+ * Last Changed By  : Alexandre ZANNI
+ * Last Change      : 06/01/2016 19:07:46
+ * Description      : 
+ * Version          : 1.0
+ * Revision         : none
  *
- *******************************************************************************/
+ *******************************************************************************
+ */
 ~~~
 ### Fichier "Makefile"
 ~~~ gherkin
