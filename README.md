@@ -65,29 +65,29 @@ Une base de connaissances pour suivre quelques bonne règles de codage en C est 
 ## Règles "Makefile"
 ~~~ gherkin
 #### DEFAULT PARAMETERS ####
-EXECUTABLE=<Output Executable Name>
-SOURCES=<Source1 Source2 .... SourceX>
+EXECUTABLE=main.out
+SOURCES=main.c
 CFLAGS= -Wall -ansi -pedantic
-LDFLAGS=<OPT1 OPT2 ... OPTX>
+LDFLAGS=
 CC=gcc
 OBJECTS=$(SOURCES:.c=.o)
 
 #### CUSTOM PARAMETERS ####
-<NAME>(CAPS LOCK)=your parameters
+#<NAME>(CAPS LOCK)=your parameters
 
 #### DEFAULT TARGETS ####
 all: $(EXECUTABLE)
-    $(EXECUTABLE): $(OBJECTS)
-    $(CC) $(LDFLAGS) $(OBJECTS) -o $(EXECUTABLE)
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $(EXECUTABLE)
 
 clean:
     rm $(OBJECTS) $(EXECUTABLE)
 
 #### CUSTOM TARGET ####
-<Action Name>:
-    Action 1
-    Action 2
-    Action X
+#<Action Name>:
+#    Action 1
+#    Action 2
+#    Action X
 
 ~~~
 ## Règles C
