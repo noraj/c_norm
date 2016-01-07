@@ -185,10 +185,9 @@ Et bien d'autres choses ... qui vont vous faire gagner du temps.
 Le plugin se nome `C.Vim` voici comment l'installer :
 
 **Télécharger C.Vim**
-```
-$ cd /usr/src
-$ wget http://www.vim.org/scripts/download_script.php?src_id=21803
-```
+Télécharger manuellement le plugin à l'adresse suivante : `http://www.vim.org/scripts/download_script.php?src_id=21803
+
+Puis placer manuellement dans `/usr/src`.
 
 **Installer le plugin**
 L'étape `cd` vise à se placer dans votre répertoire personnel.
