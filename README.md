@@ -8,8 +8,6 @@ Une base de connaissances pour suivre quelques bonne règles de codage en C est 
 * Une seule instruction par ligne.
 * Une fonction ne doit pas excéder 25 lignes entre les accolades.
 * Un fichier ne doit pas contenir plus de 5 fonctions
-* Chaque fichier source (`.c`, `.h`, `Makefile`) doit commencer pas un header.
-* Un fichier ne doit pas contenir plus de 1 fonctions
 * Chaque fichier source (`.c`, `.h`, `Makefile`) doit commencer par un header.
 * Les commentaires sont commencés et terminés par une ligne seule.
 * Toutes les lignes intermédiaires s'alignent entre elles, et commencent par ` *`
