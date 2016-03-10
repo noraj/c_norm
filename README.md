@@ -167,7 +167,7 @@ int main(int argc, char *argv)
 ~~~
 
 #### Exceptions
-Les variables utilisées dans les ```for``` ne doivent pas être déclarées et initialisées dans la boucle en elle même
+Les variables utilisées dans les ```for``` peuvent être déclarées et initialisées dans la boucle en elle même
 
 ~~~ c
 /* variable is declared in for instruction */
@@ -186,10 +186,11 @@ char *string = "paul"
 
 ### Fonctions
 - Les noms de fonctions sont en anglais
-- Une tabulation est composée de 4 espaces
+- Une tabulation est composée de 2 ou 4 espaces
 - Interdit d'utiliser :
     * Goto
-    * Switch Case
+
+Remarque : Les switch case doivent être utilisés avec discernement
 
 ~~~ c
 /* in file_name.h */
