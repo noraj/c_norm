@@ -99,6 +99,36 @@ clean:
 /* Normal comment with one line  */
 ~~~
 
+### Prototypes
+
+Les prototypes des fonctions doivent être placés leur fichier `.h` correspondant.
+
+Exemple :
++ 1 fonction `my_strlen(char *c)` dans 1 fichier `my_strlen.c`
++ 1 prototype `my_strlen(char*);` dans 1 fichier `my_strlen.h`
+
+De plus les préprocesseur `#include` doivent être entourés d'un include guard unique respectant la convention de nommage suivante :
+
+```c
+#ifndef _LIBRARY_NAME_H
+#define _LIBRARY_NAME_H
+#include <library_name.h>
+#endif
+```
+
+Exemple d'include guard :
+```c
+#ifndef _UNISTD_H
+#define _UNISTD_H
+#include <unistd.h>
+#endif
+
+#ifndef _MY_STRLEN_H
+#define _MY_STRLEN_H
+#include "my_strlen.h"
+#endif
+```
+
 ### Variables
 * Les variables doivent être écrites en langue anglaise et ne doivent pas excéder 20 caractères.
 * Les abrévations peuvent être utilisées.
