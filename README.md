@@ -110,21 +110,21 @@ Exemple :
 De plus les préprocesseur `#include` doivent être entourés d'un include guard unique respectant la convention de nommage suivante :
 
 ```c
-#ifndef _LIBRARY_NAME_H
-#define _LIBRARY_NAME_H
+#ifndef LIBRARY_NAME_H
+#define LIBRARY_NAME_H
 #include <library_name.h>
 #endif
 ```
 
 Exemple d'include guard :
 ```c
-#ifndef _UNISTD_H
-#define _UNISTD_H
+#ifndef UNISTD_H
+#define UNISTD_H
 #include <unistd.h>
 #endif
 
-#ifndef _MY_STRLEN_H
-#define _MY_STRLEN_H
+#ifndef MY_STRLEN_H
+#define MY_STRLEN_H
 #include "my_strlen.h"
 #endif
 ```
