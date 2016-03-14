@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>C norm by shark-oxi</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>C norm</h1>
+          <h2>C Norm</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/shark-oxi/c_norm/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/shark-oxi/c_norm/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/shark-oxi/c_norm" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="c-norm-for-my_printf-project" class="anchor" href="#c-norm-for-my_printf-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>C Norm for <em>my_printf</em> project</h1>
+
+<h2>
+<a id="foreword" class="anchor" href="#foreword" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Foreword</h2>
+
+<p>The norm is not a constraint.</p>
+
+<p>The norm is a safeguard to guide you in writing a simple C.</p>
+
+<h3>
+<a id="why-a-norm-is-needed-" class="anchor" href="#why-a-norm-is-needed-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why a norm is needed ?</h3>
+
+<p>The norm has two main goals:</p>
+
+<ul>
+<li>Harmonize your codes so that everyone can read them easily</li>
+<li>Write simple and clear codes</li>
+</ul>
+
+<h2>
+<a id="the-norm" class="anchor" href="#the-norm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The norm</h2>
+
+<h3>
+<a id="naming-convention" class="anchor" href="#naming-convention" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Naming convention</h3>
+
+<p>Required :</p>
+
+<ul>
+<li>Global variables must be in uppercase letters</li>
+<li>Name of variables, functions, files, directories must be composed of lowercase letters (<code>a-z</code>), number (<code>1-9</code>) and underscore (<code>'_'</code>) and are in English</li>
+<li>Non-ASCII characters are forbidden</li>
+</ul>
+
+<p>Advised :</p>
+
+<ul>
+<li>Variables, functions, macros, types, files and directories must be explicit</li>
+<li>It's not recommended to use global variables</li>
+</ul>
+
+<h3>
+<a id="format" class="anchor" href="#format" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Format</h3>
+
+<p>Required :</p>
+
+<ul>
+<li>All you files must begin with the norm header</li>
+<li>One instruction per line</li>
+<li>Empty lines must not contain spaces or tabulation</li>
+<li>Tabulations must be replaced by 2 or 4 spaces</li>
+<li>Semicolon (';') bust be follow by a space if not end of line</li>
+<li>Pointer stars must be sticked to the variable name</li>
+<li>Only one variable declaration per line</li>
+<li>Declarations must be at the beginning of the function</li>
+</ul>
+
+<p>Advised :</p>
+
+<ul>
+<li>A function doesn't exceed 25 lines</li>
+<li>A line, including comments, doesn't be greater than 80 columns</li>
+<li>A <code>.c</code> doesn't exceed 5 functions</li>
+</ul>
+
+<h3>
+<a id="function" class="anchor" href="#function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Function</h3>
+
+<p>Required :</p>
+
+<ul>
+<li>A function with no arguments must have a prototype with <code>void</code> as parameter</li>
+</ul>
+
+<p>Advised :</p>
+
+<ul>
+<li>You can use variable name in prototypes</li>
+</ul>
+
+<h2>
+<a id="headers" class="anchor" href="#headers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Headers</h2>
+
+<p>You must follow this rules ( <a href="http://umich.edu/%7Eeecs381/handouts/CHeaderFileGuidelines.pdf">umich.edu</a> for more details) :</p>
+
+<blockquote>
+<ul>
+<li>Rule #1. Each module with its .h and .c file should correspond to a clear piece of functionality.</li>
+<li>Rule #2. Always use “include guards” in a header file.</li>
+<li>Rule #3. All of the declarations needed to use a module must appear in its header file, and this file is always used to access the module.</li>
+<li>Rule #4. The header file contains only declarations, and is included by the .c file for the module.</li>
+<li>Rule #5. Set up program-wide global variables with an extern declaration in the header file, and a defining declaration in the .c file.</li>
+<li>Rule #6. Keep a module’s internal declarations out of the header file.</li>
+<li>Rule #7. Every header file A.h should #include every other header file that A.h requires to compile correctly, but no more.</li>
+<li>Rule #8. If an incomplete declaration of a structure type X will do, use it instead of #including its header X.h.</li>
+<li>Rule #9. The content of a header file should compile correctly by itself.</li>
+<li>Rule #10. The A.c file should first #include its A.h file, and then any other headers required for its code.</li>
+<li>Rule #11. Never #include a .c file for any reason!</li>
+</ul>
+</blockquote>
+
+<h3>
+<a id="comments" class="anchor" href="#comments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Comments</h3>
+
+<p>Required :</p>
+
+<ul>
+<li>Comments begin and end with an empty line</li>
+<li>Every transitional lines must be align each others, and begin by <code>*</code>
+</li>
+<li>No comments with <code>//</code>
+</li>
+<li>Comments are in English</li>
+<li>Function coment must be just before the function</li>
+</ul>
+
+<p>Not recommended :</p>
+
+<ul>
+<li>Comments inside a function</li>
+</ul>
+
+<p>Examples :</p>
+
+<div class="highlight highlight-source-c"><pre><span class="pl-c">/*</span>
+<span class="pl-c"> * Normal comment</span>
+<span class="pl-c"> * with multiple lines</span>
+<span class="pl-c"> */</span>
+
+<span class="pl-c">/* Normal comment with one line  */</span></pre></div>
+
+<h3>
+<a id="others" class="anchor" href="#others" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Others</h3>
+
+<p>Forbidden :</p>
+
+<ul>
+<li>Usage of <code>goto</code>
+</li>
+</ul>
+
+<p>Not recommended :</p>
+
+<ul>
+<li>Usage of <code>do while</code>
+</li>
+<li>Usage of <code>switch</code>/<code>case</code>
+</li>
+</ul>
+
+<p>Authorized :</p>
+
+<ul>
+<li>Usage of <code>for</code>
+</li>
+</ul>
+
+<h2>
+<a id="norm-headers" class="anchor" href="#norm-headers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Norm headers</h2>
+
+<h3>
+<a id="example-of-h-header" class="anchor" href="#example-of-h-header" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example of <code>.h</code> header</h3>
+
+<div class="highlight highlight-source-c"><pre><span class="pl-c">/******************************************************************************</span>
+<span class="pl-c"> *</span>
+<span class="pl-c"> * File Name        : test.h</span>
+<span class="pl-c"> * Created By       : Alexandre ZANNI</span>
+<span class="pl-c"> * Creation Date    : 06/01/2016</span>
+<span class="pl-c"> * Last Changed By  : Alexandre ZANNI</span>
+<span class="pl-c"> * Last Change      : 06/01/2016 19:07:46</span>
+<span class="pl-c"> * Description      :</span>
+<span class="pl-c"> * Version          : 1.0</span>
+<span class="pl-c"> * Revision         : none</span>
+<span class="pl-c"> *</span>
+<span class="pl-c"> ******************************************************************************</span>
+<span class="pl-c"> */</span></pre></div>
+
+<h3>
+<a id="exemple-of-makefile-header" class="anchor" href="#exemple-of-makefile-header" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exemple of makefile header</h3>
+
+<pre><code>###############################################################################
+# File Name       : Makefile                                                  #
+# Created By      : Alexandre ZANNI                                           #
+# Creation Date   : 06/01/2016                                                #
+# Last Changed By : Alexandre ZANNI                                           #
+# Last Changed    : 06/01/2016 19:07:46                                       #
+# Description     : Provides compilation automation to the project            #
+################################################################################
+</code></pre>
+
+<h2>
+<a id="makefile-file" class="anchor" href="#makefile-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>makefile file</h2>
+
+<p>Required :</p>
+
+<ul>
+<li>Usage of <code>-Wall</code>, <code>-ansi</code>, <code>-pedantic</code> flags</li>
+</ul>
+
+<h2>
+<a id="example-of-makefile-file" class="anchor" href="#example-of-makefile-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example of makefile file</h2>
+
+<div class="highlight highlight-text-gherkin-feature"><pre><span class="pl-c">#### DEFAULT PARAMETERS ####</span>
+EXECUTABLE=main.out
+SOURCES=main.c
+CFLAGS= -Wall -ansi -pedantic
+LDFLAGS=
+CC=gcc
+OBJECTS=$(SOURCES:.c=.o)
+
+<span class="pl-c">#### CUSTOM PARAMETERS ####</span>
+<span class="pl-c">#&lt;NAME&gt;(CAPS LOCK)=your parameters</span>
+
+<span class="pl-c">#### DEFAULT TARGETS ####</span>
+all: $(EXECUTABLE)
+$(EXECUTABLE): $(OBJECTS)
+    $(CC) $(LDFLAGS) $(OBJECTS) -o $(EXECUTABLE)
+
+clean:
+    rm $(OBJECTS) $(EXECUTABLE)
+
+<span class="pl-c">#### CUSTOM TARGET ####</span>
+<span class="pl-c">#&lt;Action Name&gt;:</span>
+<span class="pl-c">#    Action 1</span>
+<span class="pl-c">#    Action 2</span>
+<span class="pl-c">#    Action X</span>
+</pre></div>
+        </section>
+
+        <footer>
+          C norm is maintained by <a href="https://github.com/shark-oxi">shark-oxi</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
