@@ -101,33 +101,20 @@ clean:
 
 ### Prototypes
 
-Les prototypes des fonctions doivent être placés leur fichier `.h` correspondant.
+Il est nécessaire d'utiliser correctement les fichiers headers `.h` et les pre-crocesseurs `#include`.
 
-Exemple :
-+ 1 fonction `my_strlen(char *c)` dans 1 fichier `my_strlen.c`
-+ 1 prototype `my_strlen(char*);` dans 1 fichier `my_strlen.h`
-
-De plus les préprocesseur `#include` doivent être entourés d'un include guard unique respectant la convention de nommage suivante :
-
-```c
-#ifndef LIBRARY_NAME_H
-#define LIBRARY_NAME_H
-#include <library_name.h>
-#endif
-```
-
-Exemple d'include guard :
-```c
-#ifndef UNISTD_H
-#define UNISTD_H
-#include <unistd.h>
-#endif
-
-#ifndef MY_STRLEN_H
-#define MY_STRLEN_H
-#include "my_strlen.h"
-#endif
-```
+Quelques règles (en anglais) tirées du site [umich.edu](http://umich.edu/~eecs381/handouts/CHeaderFileGuidelines.pdf), veuillez vous référer pour plus de détails :
+> + Rule #1. Each module with its .h and .c file should correspond to a clear piece of functionality.
+> + Rule #2. Always use “include guards” in a header file.
+> + Rule #3. All of the declarations needed to use a module must appear in its header file, and this file is always used to access the module.
+> + Rule #4. The header file contains only declarations, and is included by the .c file for the module.
+> + Rule #5. Set up program-wide global variables with an extern declaration in the header file, and a defining declaration in the .c file. 
+> + Rule #6. Keep a module’s internal declarations out of the header file.
+> + Rule #7. Every header file A.h should #include every other header file that A.h requires to compile correctly, but no more. 
+> + Rule #8. If an incomplete declaration of a structure type X will do, use it instead of #including its header X.h.
+> + Rule #9. The content of a header file should compile correctly by itself.
+> + Rule #10. The A.c file should first #include its A.h file, and then any other headers required for its code. 
+> + Rule #11. Never #include a .c file for any reason!
 
 ### Variables
 * Les variables doivent être écrites en langue anglaise et ne doivent pas excéder 20 caractères.
