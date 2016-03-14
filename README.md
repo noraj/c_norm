@@ -1,19 +1,113 @@
-# Norme C
+# C Norm for *my_printf* project
 
-## Règles de codage
-Une base de connaissances pour suivre quelques bonne règles de codage en C est disponible [securecoding.cert.org](https://www.securecoding.cert.org/confluence/display/c/SEI+CERT+C+Coding+Standard).
+## Table of Contents
 
-## Règles classiques
-* Une ligne, y compris pour les commentaires, ne doit pas excéder 80 colonnes.
-* Une seule instruction par ligne.
-* Une fonction ne doit pas excéder 25 lignes entre les accolades.
-* Un fichier ne doit pas contenir plus de 5 fonctions
-* Chaque fichier source (`.c`, `.h`, `Makefile`) doit commencer par un header.
-* Les commentaires sont commencés et terminés par une ligne seule.
-* Toutes les lignes intermédiaires s'alignent entre elles, et commencent par ` *`
+## Foreword
 
-## HEADER
-### Exemple d'header de fichier .h
+The norm is not a constraint.
+
+The norm is a safeguard to guide you in writing a simple C.
+
+### Why a norm is needed ?
+
+The norm has two main goals:
+
++ Harmonize your codes so that everyone can read them easily
++ Write simple and clear codes
+
+## The norm
+
+### Naming convention
+
+Required :
+* Global variables must be in uppercase letters
+* Name of variables, functions, files, directories must be composed of lowercase letters (`a-z`), number (`1-9`) and underscore (`'_'`) and are in English
+* Non-ASCII characters are forbidden
+
+Advised :
+* Variables, functions, macros, types, files and directories must be explicit
+* It's not recommended to use global variables
+
+### Format
+
+Required :
+* All you files must begin with the norm header
+* One instruction per line
+* Empty lines must not contain spaces or tabulation
+* Tabulations must be replaced by 2 or 4 spaces
+* Semicolon (';') bust be follow by a space if not end of line
+* Pointer stars must be sticked to the variable name
+* Only one variable declaration per line
+* Declarations must be at the beginning of the function
+
+Advised :
+* A function doesn't exceed 25 lines
+* A line, including comments, doesn't be greater than 80 columns
+* A `.c` doesn't exceed 5 functions
+
+
+### Function
+
+Required :
+* A function with no arguments must have a prototype with `void` as parameter
+
+Advised :
+* You can use variable name in prototypes
+
+## Headers
+
+You must follow this rules ( [umich.edu](http://umich.edu/~eecs381/handouts/CHeaderFileGuidelines.pdf) for more details) :
+> + Rule #1. Each module with its .h and .c file should correspond to a clear piece of functionality.
+> + Rule #2. Always use “include guards” in a header file.
+> + Rule #3. All of the declarations needed to use a module must appear in its header file, and this file is always used to access the module.
+> + Rule #4. The header file contains only declarations, and is included by the .c file for the module.
+> + Rule #5. Set up program-wide global variables with an extern declaration in the header file, and a defining declaration in the .c file.
+> + Rule #6. Keep a module’s internal declarations out of the header file.
+> + Rule #7. Every header file A.h should #include every other header file that A.h requires to compile correctly, but no more.
+> + Rule #8. If an incomplete declaration of a structure type X will do, use it instead of #including its header X.h.
+> + Rule #9. The content of a header file should compile correctly by itself.
+> + Rule #10. The A.c file should first #include its A.h file, and then any other headers required for its code.
+> + Rule #11. Never #include a .c file for any reason!
+
+### Comments
+
+Required :
+* Comments begin and end with an empty line
+* Every transitional lines must be align each others, and begin by `*`
+* No comments with `//`
+* Comments are in English
+* Function coment must be just before the function
+
+Not recommended :
+* Comments inside a function
+
+Examples :
+
+~~~ c
+/*
+ * Normal comment
+ * with multiple lines
+ */
+
+/* Normal comment with one line  */
+~~~
+
+### Others
+
+Forbidden :
+* Usage of `goto`
+
+Not recommended :
+* Usage of `do while`
+* Usage of `switch`/`case`
+
+Authorized :
+* Usage of `for`
+
+## Norm headers
+
+### Example of `.h` header
+
 ~~~ c
 /******************************************************************************
  *
@@ -22,42 +116,33 @@ Une base de connaissances pour suivre quelques bonne règles de codage en C est 
  * Creation Date    : 06/01/2016
  * Last Changed By  : Alexandre ZANNI
  * Last Change      : 06/01/2016 19:07:46
- * Description      : 
+ * Description      :
  * Version          : 1.0
  * Revision         : none
  *
- *******************************************************************************
+ ******************************************************************************
  */
 ~~~
-### Template pour c.vim
-~~~ c
-/******************************************************************************
- *
- * File Name        : |FILENAME|
- * Created By       : Firstname NAME
- * Creation Date    : |DATE|
- * Last Changed By  : Firstname NAME
- * Last Change      : |DATE| |TIME|
- * Description      : <CURSOR>
- * Version          : 1.0
- * Revision         : none
- *
- *******************************************************************************
- */
+
+### Exemple of makefile header
+
 ~~~
-### Exemle d'header de fichier Makefile
-~~~ gherkin
-################################################################################
-# File Name       : Makefile                                                   #
-# Created By      : Firstname NAME                                             #
-# Creation Date   : 06/01/2016                                                 #
-# Last Changed By : Firstname Name                                             #
-# Last Changed    : 06/01/2016 19:07:46                                        #
-# Description     : Provides compilation automation to the project             #
+###############################################################################
+# File Name       : Makefile                                                  #
+# Created By      : Alexandre ZANNI                                           #
+# Creation Date   : 06/01/2016                                                #
+# Last Changed By : Alexandre ZANNI                                           #
+# Last Changed    : 06/01/2016 19:07:46                                       #
+# Description     : Provides compilation automation to the project            #
 ################################################################################
 ~~~
 
-## Règles "Makefile"
+## makefile file
+
+Required :
+* Usage of `-Wall`, `-ansi`, `-pedantic` flags
+
+## Example of makefile file
 ~~~ gherkin
 #### DEFAULT PARAMETERS ####
 EXECUTABLE=main.out
@@ -85,149 +170,3 @@ clean:
 #    Action X
 
 ~~~
-## Règles C
-### Commentaires
-* Les commentaires doivent être en anglais
-* Le commentaire doit être écrit avant la fonction concernée
-
-~~~ c
-/*
- * Normal comment
- * with many lines
- */
-
-/* Normal comment with one line  */
-~~~
-
-### Prototypes
-
-Il est nécessaire d'utiliser correctement les fichiers headers `.h` et les pre-crocesseurs `#include`.
-
-Quelques règles (en anglais) tirées du site [umich.edu](http://umich.edu/~eecs381/handouts/CHeaderFileGuidelines.pdf), veuillez vous référer pour plus de détails :
-> + Rule #1. Each module with its .h and .c file should correspond to a clear piece of functionality.
-> + Rule #2. Always use “include guards” in a header file.
-> + Rule #3. All of the declarations needed to use a module must appear in its header file, and this file is always used to access the module.
-> + Rule #4. The header file contains only declarations, and is included by the .c file for the module.
-> + Rule #5. Set up program-wide global variables with an extern declaration in the header file, and a defining declaration in the .c file. 
-> + Rule #6. Keep a module’s internal declarations out of the header file.
-> + Rule #7. Every header file A.h should #include every other header file that A.h requires to compile correctly, but no more. 
-> + Rule #8. If an incomplete declaration of a structure type X will do, use it instead of #including its header X.h.
-> + Rule #9. The content of a header file should compile correctly by itself.
-> + Rule #10. The A.c file should first #include its A.h file, and then any other headers required for its code. 
-> + Rule #11. Never #include a .c file for any reason!
-
-### Variables
-* Les variables doivent être écrites en langue anglaise et ne doivent pas excéder 20 caractères.
-* Les abrévations peuvent être utilisées.
-* Chaque nom de variable doit commencer par une minuscule
-* Lors de leur création, les variables doivent être initialisées et instanciées.
-
-~~~ c
-/* On word */
-int age = 20;
-/* If a variable is more than one word long, you must to separate each with '_' */
-int my_age = 20;
-int yourAge = 21;
-~~~
-
-* Si la variable est une constante (déclarée avec #DEFINE), elle doit être écrite en majuscules
-* Les variables globales doivent être précédées d'un ```G_```.
-* Les variables doivent être déclarées au début de leur domaine d'utilité
-
-~~~ c
-/* constant variable */
-#DEFINE VAR_CONSTANT = 1;
-
-/* global variable */
-int G_size = 3;
-
-int main(int argc, char *argv)
-{
-    /* function variable */
-    int i = 0;
-    while(i < 10)
-    {
-        /* loop variable */
-        int size = write(1, i, sizeof(i));
-    }
-}
-~~~
-
-#### Exceptions
-Les variables utilisées dans les ```for``` peuvent être déclarées et initialisées dans la boucle en elle même
-
-~~~ c
-/* variable is declared in for instruction */
-for(int i = O; i < 10; i ++)
-{
-    /* my code */
-}
-~~~
-
-* Pour les pointeurs, coller l'étoile au nom de la variable:
-
-~~~ c
-char *string = "paul"
-~~~
-* Les structures sont déclarées comme des variables.
-
-### Fonctions
-- Les noms de fonctions sont en anglais
-- Une tabulation est composée de 2 ou 4 espaces
-- Interdit d'utiliser :
-    * Goto
-
-Remarque : Les switch case doivent être utilisés avec discernement
-
-~~~ c
-/* in file_name.h */
-
-int test_function(int i);
-
-/* in file_name.c */
-
-/*
- ** This is the function header
- */
-int test_function (int i)
-{
-    write(1, i, sizeof(int));
-}
-~~~
-## Coder en C avec vim
-Le but va être de transformer Vim en IDE pour C/C++.
-
-Il sera alors possible d'automatiser l'ajout des header par exemple.
-Et bien d'autres choses ... qui vont vous faire gagner du temps.
-
-Le plugin se nome `C.Vim` voici comment l'installer :
-
-**Télécharger C.Vim**
-Télécharger manuellement le plugin à l'adresse [suivante](http://www.vim.org/scripts/download_script.php?src_id=21803)
-
-Puis placer manuellement dans `/usr/src`.
-
-**Installer le plugin**
-L'étape `cd` vise à se placer dans votre répertoire personnel.
-```
-$ cd
-$ mkdir .vim
-$ cd .vim
-$ unzip /usr/src/cvim.zip
-```
-
-**Activer le plugin**
-```
-$ vim .vimrc
-```
-Ajouter la ligne suivant :
-```
-filetype plugin on
-```
-
-Pour en savoir plus sur C.vim voici un [tuto](http://www.thegeekstuff.com/2009/01/tutorial-make-vim-as-your-cc-ide-using-cvim-plugin/).
-
-C.vim : [vim.org](http://www.vim.org/scripts/script.php?script_id=213)
-
-Pour modifier le template des headers ajoutés automatiquement aux `.c` et `.h`, modifier le fichier `~/.vim/c-support/templates/c.comments.template`.
-
