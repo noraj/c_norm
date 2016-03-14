@@ -1,7 +1,5 @@
 # C Norm for *my_printf* project
 
-## Table of Contents
-
 ## Foreword
 
 The norm is not a constraint.
