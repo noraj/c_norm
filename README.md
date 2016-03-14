@@ -132,7 +132,7 @@ Authorized :
 # Last Changed By : Alexandre ZANNI                                           #
 # Last Changed    : 06/01/2016 19:07:46                                       #
 # Description     : Provides compilation automation to the project            #
-################################################################################
+###############################################################################
 ~~~
 
 ## makefile file
