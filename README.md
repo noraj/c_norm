@@ -1,4 +1,4 @@
-# C Norm for *my_printf* project
+# C Norm
 
 ## Foreword
 
