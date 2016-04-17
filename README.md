@@ -29,11 +29,11 @@ Advised :
 ### Format
 
 Required :
-* All you files must begin with the norm header
+* All your files must begin with the norm header
 * One instruction per line
 * Empty lines must not contain spaces or tabulation
 * Tabulations must be replaced by 2 or 4 spaces
-* Semicolon (';') bust be follow by a space if not end of line
+* Semicolon (`;`) bust be follow by a space if not end of line
 * Pointer stars must be sticked to the variable name
 * Only one variable declaration per line
 * Declarations must be at the beginning of the function
@@ -81,14 +81,14 @@ Not recommended :
 
 Examples :
 
-~~~ c
+``` c
 /*
  * Normal comment
  * with multiple lines
  */
 
 /* Normal comment with one line  */
-~~~
+```
 
 ### Others
 
@@ -106,7 +106,7 @@ Authorized :
 
 ### Example of `.h` header
 
-~~~ c
+``` c
 /******************************************************************************
  *
  * File Name        : test.h
@@ -120,11 +120,11 @@ Authorized :
  *
  ******************************************************************************
  */
-~~~
+```
 
 ### Exemple of makefile header
 
-~~~
+```
 ###############################################################################
 # File Name       : Makefile                                                  #
 # Created By      : Alexandre ZANNI                                           #
@@ -133,7 +133,7 @@ Authorized :
 # Last Changed    : 06/01/2016 19:07:46                                       #
 # Description     : Provides compilation automation to the project            #
 ###############################################################################
-~~~
+```
 
 ## makefile file
 
@@ -141,7 +141,7 @@ Required :
 * Usage of `-Wall`, `-ansi`, `-pedantic` flags
 
 ## Example of makefile file
-~~~ gherkin
+``` gherkin
 #### DEFAULT PARAMETERS ####
 EXECUTABLE=main.out
 SOURCES=main.c
@@ -167,4 +167,4 @@ clean:
 #    Action 2
 #    Action X
 
-~~~
+```
