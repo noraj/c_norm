@@ -70,7 +70,6 @@ You must follow this rules ( [umich.edu](http://umich.edu/~eecs381/handouts/CHea
 ### Comments
 
 Required :
-* Comments begin and end with an empty line
 * Every transitional lines must be align each others, and begin by `*`
 * No comments with `//`
 * Comments are in English
