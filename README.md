@@ -73,7 +73,7 @@ Required :
 * Every transitional lines must be align each others, and begin by `*`
 * No comments with `//`
 * Comments are in English
-* Function coment must be just before the function
+* Function comment must be just before the function
 
 Not recommended :
 * Comments inside a function
